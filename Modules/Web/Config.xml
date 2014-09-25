@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Config>
+    <Module>
+        <Name>Web</Name>
+        <Description>Default Module - Example Project</Description>
+        <Version>1.0</Version>
+        <Weight>-100</Weight>
+        <Enabled>true</Enabled>
+    </Module>
+    <Translate>
+    </Translate>
+    <Router>
+        <Routes>
+            <Route name="Front" path="/" controller="FrontController:index">
+                <options>
+                    <_query>true</_query>
+                    <_i18n und="true"/>
+                    <!--<_scheme>https</_scheme>-->
+                </options>
+                <schemes>
+                    <scheme>https</scheme>
+                    <scheme>http</scheme>
+                </schemes>
+                <methods>
+                    <method>GET</method>
+                </methods>
+                <!--<host></host>-->
+            </Route>
+        </Routes>
+    </Router>
+    <Controller>
+        <Front name="FrontController">
+            <Action name="index">
+                <View>
+                </View>
+            </Action>
+        </Front>
+    </Controller>
+    <Event>
+        <Listener event="controller.init" callback="onControllerInit"/>
+    </Event>
+
+</Config>
