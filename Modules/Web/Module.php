@@ -38,7 +38,7 @@ class Module extends GenericModule
             ->add('css://default.css');
 
         $controller->getView()->resources->get('META')
-            ->add('meta', array('attributes' => array('charset' => strtolower($controller->router->Locale->getCharset()))))
+            ->add('meta', array('attributes' => array('charset' => strtolower($controller->Router->Locale->getCharset()))))
             ->add('title', array('content' => 'Example Module'))
             ->add('meta', array('attributes' => array('name' => 'ncore', 'content' => 'v_3_4')))
             ->add('meta', array('attributes' => array('name' => 'viewport', 'content' => 'width=device-width, initial-scale=1.0')));

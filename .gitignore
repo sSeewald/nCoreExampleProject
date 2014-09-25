@@ -1,3 +1,8 @@
+phpunit.xml.dist
+composer.lock
+/vendor/
+/src/vendor/
+/src/.tscache/
 ### JetBrains template
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
 

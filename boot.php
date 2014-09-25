@@ -13,6 +13,7 @@ ini_set('display_errors', 1);
 define('_ROOT_', __DIR__);
 
 require_once 'vendor/autoload.php';
+nCore\Autoloader::register(true);
 
 $config = array();
 
