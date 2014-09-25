@@ -7,11 +7,6 @@ date_default_timezone_set('Europe/Berlin');
 error_reporting(E_ALL | E_STRICT);
 ini_set('display_errors', 1);
 
-/*
- * GLOBAL PATH Definitions
- */
-define('_ROOT_', __DIR__);
-
 require_once 'vendor/autoload.php';
 nCore\Autoloader::register(true);
 
