@@ -1,8 +1,9 @@
 {
-    "name": "ncore/ncore",
+    "name": "ncore/example-project",
     "description": "nCore a simple Module based PHP Framework using Twig, Doctrine, Symfony",
     "keywords": [
-        "ncore"
+        "ncore",
+        "example"
     ],
     "homepage": "https://github.com/sSeewald/nCore",
     "type": "archive-package",
@@ -21,16 +22,6 @@
         }
     ],
     "require": {
-        "pimple/pimple": "3.*",
-        "symfony/http-kernel": "2.5.2",
-        "symfony/form": "2.5.2",
-        "symfony/security-csrf": "2.5.2",
-        "symfony/validator": "2.5.2",
-        "doctrine/common": "2.3.0",
-        "symfony/doctrine-bridge": "2.5.2",
-        "symfony/twig-bundle": "2.5.2",
-        "phpunit/phpunit": "4.2.6",
         "ncore/ncore": "dev-master"
-
     }
 }
