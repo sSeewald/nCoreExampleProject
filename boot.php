@@ -1,9 +1,4 @@
 <?php
-/**
- * Created by novael media.
- * Date: 13.09.13
- * Time: 12:46
- */
 
 /*
  * GLOBAL PHP Settings
@@ -17,21 +12,7 @@ ini_set('display_errors', 1);
  */
 define('_ROOT_', __DIR__);
 
-/*
- * AUTOLOADER register PREFIXES
- */
-require_once 'nCore/Config.php';
-/*
- * nCore default loader
- */
-require_once 'nCore/Core/Cache/ClassLoader.php';
-/*
- * nCore fallback loader
- */
-require_once 'nCore/Autoloader.php';
-nCore\Autoloader::register(true);
-require_once 'nCore/App.php';
-require_once 'Library/autoload.php';
+require_once 'vendor/autoload.php';
 
 $config = array();
 
