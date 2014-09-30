@@ -2,6 +2,12 @@
 
 $url = parse_url($_SERVER["REQUEST_URI"]);
 
+/**
+ * Changing the Document_ROOT
+ */
+$DOCUMENT_ROOT = $_SERVER["DOCUMENT_ROOT"];
+$_SERVER["DOCUMENT_ROOT"] = str_replace("/public", "", $_SERVER["DOCUMENT_ROOT"]);
+
 $_GET['req'] = substr($url['path'], 1);
 
 // Default index file
@@ -22,7 +28,7 @@ if (empty($ext)) {
 }
 
 // If the file exists then return false and let the server handle it
-if (file_exists($_SERVER["DOCUMENT_ROOT"] . $path)) {
+if (file_exists($DOCUMENT_ROOT . $path)) {
     return false;
 }
 

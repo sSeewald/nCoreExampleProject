@@ -1,0 +1,23 @@
+{
+  "name": "nCoreExample",
+  "version": "0.0.0",
+  "homepage": "https://github.com/sSeewald/nCoreExampleProject",
+  "authors": [
+    "Sascha Seewald <sascha.seewald@novael.de>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "dt-angular": "~1.2.16",
+    "angular": "~1.2.25",
+    "ngstorage": "~0.3.0",
+    "ngSmoothScroll": "*",
+    "dt-angular-ui-bootstrap": "*"
+  }
+}

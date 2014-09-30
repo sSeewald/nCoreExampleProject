@@ -3,6 +3,8 @@ composer.lock
 /vendor/
 /src/vendor/
 /src/.tscache/
+/src/node_modules/
+/src/.build/
 ### JetBrains template
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
 

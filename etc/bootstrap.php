@@ -7,7 +7,7 @@
 ini_set("suhosin.session.cryptdocroot", "Off");
 ini_set("suhosin.cookie.cryptdocroot", "Off");
 
-$config['debug'] = false;
+$config['debug'] = true;
 
 $config['environment'] = 'dev';
 
