@@ -214,6 +214,8 @@ module.exports = function (grunt) {
 
     grunt.registerTask("build", ["ts:dist", "sass:dist", "concat", "minify", "clean"]);
 
+    grunt.registerTask("prep", ["ts:dist", "sass:dist", "concat", "minify"]);
+
     grunt.registerTask("watchAll", ["php", "watch"]);
 
 
