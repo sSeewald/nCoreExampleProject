@@ -7,13 +7,13 @@ module.exports = {
     },
 
     liveReload: {
-        port: 9001
+        port: 9002
         /*key: grunt.file.read('path/to/ssl.key'),
          cert: grunt.file.read('path/to/ssl.crt')*/
     },
     phpConf: {
         hostname: 'localhost',
-        bin: '/usr/local/zend/bin/php',
+        /*bin: '[path to your php binary]',*/
         router: '../routing.php',
         port: 5002,
         keepAlive: false,
@@ -37,8 +37,10 @@ module.exports = {
         js: [
             'vendor/angular/angular.js',
             'vendor/**/*.js',
+            '!vendor/angular-ui-bootstrap/**/*.js',
             '!vendor/**/*.min.js',
-            '!vendor/**/test/*.js'
+            '!vendor/**/test/*.js',
+            '!vendor/**/*Gruntfile.js'
         ],
         css: []
     }
