@@ -15,16 +15,16 @@ Install
 ```
 
     
-> Step 2: Install Vendor Files including the nCore Framework
+> Step 2: Install PHP Vendor Files including the nCore Framework
 
-Get into the project directory and download the latest [composer](https://getcomposer.org)
+Go into the project directory and download the latest [composer](https://getcomposer.org).
 
 ```bash
     cd [directory]
     php -r "readfile('https://getcomposer.org/installer');" | php
 ```
 
-Install [composer](https://getcomposer.org) vendor files
+Install [composer](https://getcomposer.org) vendor files.
 
 ```bash
     php composer.phar install
@@ -32,6 +32,30 @@ Install [composer](https://getcomposer.org) vendor files
 
 Use `composer dump-autoload --optimize` to optimize autoloading before deployment.
 
+    
+> Step 3: Install NPM modules and required files
 
+```bash
+    cd src/
+    npm install
+```
 
+Using Grunt to start a local Server
+------------------------------------
+
+> First Check /src/build.config.js - if you need to use a specific PHP binary or change the ports.
+
+Just go into the '/src' directory and use the "watchAll" task to start a local server.
+
+```bash
+    cd src/
+    grunt watchAll
+```
+
+Grunt watches for changes in your src directory and will automatically recompile CSS and JS files.
+
+- CSS Files: will be automatically reload without a page refresh
+- JS Files: will force a page refresh
+
+:warning: If You are running multiple instances please make sure to change the ports in `/src/build.config.js` and `/Modules/Dev/Config.xml`.
 
