@@ -1,0 +1,15 @@
+@import "config";
+@import "lib/bootstrap";
+@import "bootstrap_theme";
+@import "lib/animate";
+
+body {
+  font-family: $defaultFont;
+  font-size: $baseFontSize;
+  color: $defaultFontColor;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

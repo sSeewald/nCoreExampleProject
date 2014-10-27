@@ -4,16 +4,9 @@ namespace Modules\Web;
 
 use nCore\Core\Controller\Event\ControllerEvent;
 use nCore\Core\Module\GenericModule;
-use nCore\Core\Router\Event\RouteEvent;
-use nCore\Core\Router\Event\RouterEvent;
-use nCore\Core\Router\Route;
 
 class Module extends GenericModule
 {
-    protected $version = '1.0';
-
-    protected $weight = -100;
-
 
     public function init()
     {

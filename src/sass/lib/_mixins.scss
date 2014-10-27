@@ -1,0 +1,234 @@
+$mobileWidth: 480px;
+$tabletWidth: 1024px;
+$desktopWidth: 1680px;
+
+@mixin addMediaQuery($target) {
+  @if $target == 'mobile' {
+    @media only screen and (max-width: $mobileWidth) {
+      @content;
+    }
+  }
+  @if $target == 'notMobile' {
+    @media only screen and (min-width: $mobileWidth) {
+      @content;
+    }
+  }
+  @if $target == 'tablet' {
+    @media only screen and (min-width: $mobileWidth) and (max-width: $tabletWidth) {
+      @content;
+    }
+  }
+  @if $target == 'desktop' {
+    @media only screen and (min-width: $tabletWidth) {
+      @content;
+    }
+  }
+  @if $target == 'cinema' {
+    @media only screen and (min-width: $desktopWidth) {
+      @content;
+    }
+  }
+  @if $target == 'level0' {
+    @media only screen and (max-width: $mediaLevel0) {
+      @content;
+    }
+  }
+  @if $target == 'level1' {
+    @media only screen and (max-width: $mediaLevel1) {
+      @content;
+    }
+  }
+}
+
+@mixin addOrientation($orientation) {
+  &:after {
+    content: $orientation;
+    display: none;
+  }
+}
+
+@mixin filter($filter) {
+  -webkit-filter: $filter;
+  -moz-filter: $filter;
+  filter: $filter;
+}
+
+@mixin addBoxSizing($sizing: border-box) {
+  -webkit-box-sizing: $sizing; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: $sizing; /* Firefox, other Gecko */
+  box-sizing: $sizing;
+}
+
+/***
+Css Shortcut Functions
+***/
+
+@mixin addTransitionLinear($time: 0.8s, $target: all) {
+  -webkit-transition: $time linear $target;
+  -moz-transition: $time linear $target;
+  -ms-transition: $time linear $target;
+  -o-transition: $time linear $target;
+  transition: $time linear $target;
+}
+@mixin addTransition($time: 0.8s, $type: linear, $target: all) {
+  -webkit-transition: $time $type $target;
+  -moz-transition: $time $type $target;
+  -ms-transition: $time $type $target;
+  -o-transition: $time $type $target;
+  transition: $time $type $target;
+}
+
+@mixin addClip {
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  -o-background-clip: padding;
+  background-clip: padding-box;
+}
+
+@mixin addRounded($radius: 4px) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin addBoxSizing($sizing: border-box) {
+  -webkit-box-sizing: $sizing; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: $sizing; /* Firefox, other Gecko */
+  box-sizing: $sizing;
+}
+
+@mixin addBoxShadow($depth: 0px 0px 4px 0px rgba(0, 0, 0, 0.3)) {
+  -webkit-box-shadow: $depth;
+  -moz-box-shadow: $depth;
+  -o-box-shadow: $depth;
+  box-shadow: $depth;
+}
+
+@mixin addTextShadow($depth: 0 2px 4px rgba(0, 0, 0, .3)) {
+  -webkit-text-shadow: $depth;
+  -moz-text-shadow: $depth;
+  -o-text-shadow: $depth;
+  text-shadow: $depth;
+}
+
+@mixin addRotate($deg: 9deg) {
+  -webkit-transform: rotate($deg);
+  -moz-transform: rotate($deg);
+  -ms-transform: rotate($deg);
+  -o-transform: rotate($deg);
+  transform: rotate($deg);
+}
+
+@mixin addTransform($trans: rotate(9deg) skew(20deg, 30deg)) {
+  -webkit-transform: $trans;
+  -moz-transform: $trans;
+  -ms-transform: $trans;
+  -o-transform: $trans;
+  transform: $trans;
+}
+
+@mixin addGradient($start: #eee, $end: #777) {
+  background: $start;
+  background-image: -moz-linear-gradient(top, $start, $end);
+  background-image: -ms-linear-gradient(top, $start, $end);
+  background-image: -o-linear-gradient(top, $start, $end);
+  background-image: -webkit-gradient(linear, left top, left bottom, from($start), to($end));
+  background-image: -webkit-linear-gradient(top, $start, $end);
+  background-image: linear-gradient(top, $start, $end);
+}
+
+@mixin addBgSize($size: 100% 100%) {
+  -webkit-background-size: $size;
+  -moz-background-size: $size;
+  -o-background-size: $size;
+  background-size: $size;
+}
+
+@mixin addArrow($color, $position: 'top', $width: 10px) {
+
+
+  &:after {
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba($color, 0);
+
+    @if $position == 'top' {
+      bottom: 100%;
+      border-bottom-color: $color;
+      border-width: $width;
+      left: 50%;
+      margin-left: -$width;
+
+    }
+    @if $position == 'topRight' {
+      bottom: 100%;
+      border-bottom-color: $color;
+      border-width: $width;
+      right: 10%;
+      margin-left: -$width;
+
+    }
+    @if $position == 'topLeft' {
+      bottom: 100%;
+      border-bottom-color: $color;
+      border-width: $width;
+      left: $width;
+      margin-left: -$width;
+
+    }
+    @if $position == 'bottom' {
+      top: 100%;
+      border-left-color: $color;
+      margin-top: -$width;
+      border-width: $width;
+      left: 50%;
+
+    }
+    @if $position == 'left' {
+      top: 50%;
+      border-right-color: $color;
+      margin-top: -$width;
+      border-width: $width;
+      right: 100%;
+
+    }
+    @if $position == 'right' {
+      top: 50%;
+      border-left-color: $color;
+      margin-top: -$width;
+      border-width: $width;
+      left: 100%;
+    }
+  }
+
+}
+
+@mixin trueHeight($height: 20px) {
+  height: $height;
+  line-height: $height;
+}
+
+@mixin indent($indent: -9999px) {
+  text-indent: $indent;
+}
+
+@mixin hideText {
+  overflow: hidden;
+  @include indent();
+  display: block;
+}
+
+@mixin clear {
+  &:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
