@@ -17,14 +17,14 @@ Install
     
 > Step 2: Install Vendor Files including the nCore Framework
 
-Get into the project directory and download the latest [composer]
+Get into the project directory and download the latest [composer](https://getcomposer.org)
 
 ```bash
     cd [directory]
     php -r "readfile('https://getcomposer.org/installer');" | php
 ```
 
-Install [composer] vendor files
+Install [composer](https://getcomposer.org) vendor files
 
 ```bash
     php composer.phar install
