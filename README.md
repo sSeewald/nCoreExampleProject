@@ -54,8 +54,8 @@ Just go into the '/src' directory and use the "watchAll" task to start a local s
 
 Grunt watches for changes in your src directory and will automatically recompile CSS and JS files.
 
-- CSS Files: will be automatically reloaded without a page refresh
-- JS Files: will force a page refresh
+- CSS files gets reloaded without a page refresh
+- JS files will force a page refresh
 
 :warning: If You are running multiple instances please make sure to change the ports in `/src/build.config.js` and `/Modules/Dev/Config.xml`.
 
