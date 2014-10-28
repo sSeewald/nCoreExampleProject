@@ -7,7 +7,13 @@
         <Weight>-1000</Weight>
         <Enabled>true</Enabled>
     </Module>
-    <Event>
-        <Listener event="controller.init" callback="onControllerInit"/>
-    </Event>
+    <View>
+        <Resources>
+            <JS>
+                <resource external="true">
+                    <value>//localhost:9002/livereload.js</value>
+                </resource>
+            </JS>
+        </Resources>
+    </View>
 </Config>

@@ -13,20 +13,4 @@ class Module extends GenericModule
 
     }
 
-    /**
-     * Global Meta, Styles and Javascript
-     * Using onControllerInit Event will match any called Controller instance for the current request
-     *
-     * @param ControllerEvent $event
-     * @return bool
-     */
-    public function onControllerInit(ControllerEvent $event)
-    {
-        $controller = $event->getController();
-
-        $controller->getView()->resources->get('JS')
-            ->add('//localhost:9001/livereload.js', array('external' => true));
-
-    }
-
 }

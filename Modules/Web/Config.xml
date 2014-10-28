@@ -39,5 +39,56 @@
     <Event>
         <Listener event="controller.init" callback="onControllerInit"/>
     </Event>
+    <View>
+        <Resources>
+            <JS>
+                <resource scope="footer">
+                    <value>js://vendor.js</value>
+                </resource>
+                <resource scope="footer">
+                    <value>js://app.js</value>
+                </resource>
+            </JS>
+            <CSS>
+                <resource>
+                    <value>css://default.css</value>
+                </resource>
+            </CSS>
+            <META>
+                <resource>
+                    <value>title</value>
+                    <properties>
+                        <content>Example Module</content>
+                    </properties>
+                </resource>
+                <resource>
+                    <value>meta</value>
+                    <properties>
+                        <attributes>
+                            <charset>utf8</charset>
+                        </attributes>
+                    </properties>
+                </resource>
+                <resource>
+                    <value>meta</value>
+                    <properties>
+                        <attributes>
+                            <name>ncore</name>
+                            <content>v_3_4</content>
+                        </attributes>
+                    </properties>
+                </resource>
+                <resource>
+                    <value>meta</value>
+                    <properties>
+                        <attributes>
+                            <name>viewport</name>
+                            <content>width=device-width, initial-scale=1.0</content>
+                        </attributes>
+                    </properties>
+                </resource>
+            </META>
+        </Resources>
+    </View>
 
 </Config>

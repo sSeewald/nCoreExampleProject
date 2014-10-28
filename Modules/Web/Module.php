@@ -14,17 +14,23 @@ class Module extends GenericModule
     }
 
     /**
-     * Global Meta, Styles and Javascript
-     * Using onControllerInit Event will match any called Controller instance for the current request
+     * Global Meta, Styles and Javascript added through the onControllerInit Event registered in the module config.
+     *
+     * The onControllerInit Event will match any called controller instance for the current request.
      *
      * @param ControllerEvent $event
      * @return bool
      */
     public function onControllerInit(ControllerEvent $event)
     {
-        $controller = $event->getController();
+        /**
+         * This is an Example:
+         * Just uncomment it and remove the declarations from the Config.xml <View><Resources>...</Resources></View>
+         */
+        /*$controller = $event->getController();
 
         $controller->getView()->resources->get('JS')
+            ->add('js://vendor.js', array(), 'footer')
             ->add('js://app.js', array(), 'footer');
 
         $controller->getView()->resources->get('CSS')
@@ -34,7 +40,7 @@ class Module extends GenericModule
             ->add('meta', array('attributes' => array('charset' => strtolower($controller->Router->Locale->getCharset()))))
             ->add('title', array('content' => 'Example Module'))
             ->add('meta', array('attributes' => array('name' => 'ncore', 'content' => 'v_3_4')))
-            ->add('meta', array('attributes' => array('name' => 'viewport', 'content' => 'width=device-width, initial-scale=1.0')));
+            ->add('meta', array('attributes' => array('name' => 'viewport', 'content' => 'width=device-width, initial-scale=1.0')));*/
 
 
     }

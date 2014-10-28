@@ -14,10 +14,9 @@
     "tests"
   ],
   "dependencies": {
-    "dt-angular": "~1.2.16",
     "angular": "~1.2.25",
+    "angular-ui-bootstrap": "~0.11.2",
     "ngstorage": "~0.3.0",
-    "ngSmoothScroll": "*",
-    "dt-angular-ui-bootstrap": "*"
+    "ngSmoothScroll": "8fe8dbb4a6"
   }
 }

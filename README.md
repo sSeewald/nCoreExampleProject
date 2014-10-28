@@ -17,7 +17,7 @@ git clone https://github.com/sSeewald/nCoreExampleProject.git [your project name
     
 > Step 2: Install vendor files including the nCore framework
 
-Go into the project directory and download the latest [composer](https://getcomposer.org).
+Go into the project directory and download the latest version of [composer](https://getcomposer.org).
 
 ```bash
 cd [directory]
@@ -43,7 +43,7 @@ npm install
 Using Grunt to start a local server
 ------------------------------------
 
-> First check /src/build.config.js - if you need to use a specific PHP binary or change the ports.
+> First check /src/build.config.js - if you need to use a specific PHP binary or to change the ports.
 
 Just go into the '/src' directory and use the "watchAll" task to start a local server.
 
@@ -75,6 +75,8 @@ project/
 │   │   ...
 │
 ├── Modules (a project is organized in modules - put them here)
+│   ├── Dev (don't deploy this to the live environment)
+│   └── Web (See README for a good starting point)
 │
 └── public (all requests will be served from the public folder)
 │   ├── content
@@ -106,6 +108,11 @@ project/
 │   .htaccess (all requests are forwarded to /public/[index.php])
 │   boot.php
 │   composer.json
-│   routing.php (this File is needed if you are using grunt and php's build in webserver 'grunt watchAll')
+│   routing.php (routing instructions for php's build in webserver)
 │   ...
 ```
+
+
+##Your First Module
+
+see the [Readme in the ExampleModule](Modules/Web/README.md)

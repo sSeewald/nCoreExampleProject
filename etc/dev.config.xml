@@ -20,6 +20,7 @@
         <Charset>UTF-8</Charset>
         <ShortLocales>true</ShortLocales>
         <SingleLang>false</SingleLang>
+        <Query>lang</Query>
     </I18n>
     <Resources>
         <Resource>
@@ -81,6 +82,7 @@
         </Resource>
     </Resources>
     <Router>
+        <query>req</query>
         <setDefaultPage>false</setDefaultPage>
         <defaultRoute>false</defaultRoute>
         <forceTrailingSlash>true</forceTrailingSlash>
