@@ -1,46 +1,49 @@
 module.exports = {
 
     distPath: {
-        root: '../public',
-        js: '<%= distPath.root %>/js',
-        css: '<%= distPath.root %>/css'
+        root: "../public",
+        js: "<%= distPath.root %>/js",
+        css: "<%= distPath.root %>/css"
     },
 
     liveReload: {
         port: 9002
-        /*key: grunt.file.read('path/to/ssl.key'),
-         cert: grunt.file.read('path/to/ssl.crt')*/
+        /*key: grunt.file.read("path/to/ssl.key"),
+         cert: grunt.file.read("path/to/ssl.crt")*/
     },
     phpConf: {
-        hostname: 'localhost',
-        /*bin: '[path to your php binary]',*/
-        router: '../routing.php',
+        hostname: "localhost",
+        bin: "/usr/local/zend/bin/php",
+        router: "../routing.php",
         port: 5002,
         keepAlive: false,
         openBrowser: true
     },
     files_build: {
         ts: [
-            'ts/**/*.ts'
+            "ts/**/*.ts"
         ],
         ts_html: [
-            'ts/**/*.html'
+            "ts/**/*.html"
         ],
         js: [
-            'js/**/*.js'
+            "js/**/*.js"
         ],
         vendor: [
-            'vendor/**/*.js'
+            "vendor/**/*.js"
         ]
     },
     files_vendor: {
         js: [
-            'vendor/angular/angular.js',
-            'vendor/**/*.js',
-            '!vendor/angular-ui-bootstrap/**/*.js',
-            '!vendor/**/*.min.js',
-            '!vendor/**/test/*.js',
-            '!vendor/**/*Gruntfile.js'
+            "vendor/angular/angular.js",
+            "vendor/**/*.js",
+            "!vendor/angular-ui-bootstrap/**/*.js",
+            "!vendor/**/*.min.js",
+            "!vendor/**/test/*.js",
+            "!vendor/**/*Gruntfile.js"
+        ],
+        js_ui_bootstrap: [
+
         ],
         css: []
     }

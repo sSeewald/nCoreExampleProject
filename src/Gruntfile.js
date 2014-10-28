@@ -3,7 +3,7 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks("grunt-php");
     grunt.loadNpmTasks("grunt-ts");
-    grunt.loadNpmTasks('grunt-sass');
+    grunt.loadNpmTasks("grunt-sass");
     grunt.loadNpmTasks("grunt-contrib-concat");
     grunt.loadNpmTasks("grunt-contrib-copy");
     grunt.loadNpmTasks("grunt-contrib-clean");
@@ -11,30 +11,30 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-contrib-cssmin");
     grunt.loadNpmTasks("grunt-contrib-copy");
     grunt.loadNpmTasks("grunt-ng-annotate");
-    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks("grunt-contrib-watch");
 
-    var buildConfig = require('./build.config.js');
+    var buildConfig = require("./build.config.js");
 
     var taskConfig = {
-        pkg: grunt.file.readJSON('package.json'),
+        pkg: grunt.file.readJSON("package.json"),
 
         ts: {
             options: {
                 compile: true,                 // perform compilation. [true (default) | false]
                 comments: false,               // same as !removeComments. [true | false (default)]
-                target: 'es3',                 // target javascript language. [es3 (default) | es5]
-                module: 'amd',                 // target javascript module style. [amd (default) | commonjs]
+                target: "es3",                 // target javascript language. [es3 (default) | es5]
+                module: "amd",                 // target javascript module style. [amd (default) | commonjs]
                 sourceMap: true,               // generate a source map for every output js file. [true (default) | false]
-                sourceRoot: '',                // where to locate TypeScript files. [(default) '' == source ts location]
-                mapRoot: '',                   // where to locate .map.js files. [(default) '' == generated js location.]
+                sourceRoot: "",                // where to locate TypeScript files. [(default) "" == source ts location]
+                mapRoot: "",                   // where to locate .map.js files. [(default) "" == generated js location.]
                 declaration: false             // generate a declaration .d.ts file for every output js file. [true | false (default)]
 
             },
             dist: {
-                src: '<%= files_build.ts  %>',
-                html: '<%= files_build.ts_html  %>',
+                src: "<%= files_build.ts  %>",
+                html: "<%= files_build.ts_html  %>",
                 reference: "./ts/reference.ts",
-                out: '<%= distPath.js %>/app.js'
+                out: "<%= distPath.js %>/app.js"
             }
         },
 
@@ -47,7 +47,7 @@ module.exports = function (grunt) {
                     {
                         src: ["<%= distPath.js %>/app.js"],
                         ext: ".js",
-                        extDot: 'last',
+                        extDot: "last",
                         dest: "<%= distPath.js %>/app.js"
                     }
                 ]
@@ -60,7 +60,7 @@ module.exports = function (grunt) {
                     sourceMap: true
                 },
                 files: {
-                    '<%= distPath.css %>/default.css': 'sass/default.scss'
+                    "<%= distPath.css %>/default.css": "sass/default.scss"
                 }
             }
         },
@@ -83,7 +83,7 @@ module.exports = function (grunt) {
             },
             vendor: {
                 options: {
-                    preserveComments: 'some'
+                    preserveComments: "some"
                 },
                 files: [
                     {
@@ -100,9 +100,9 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         flatten: true,
-                        cwd: 'js/',
-                        src: '**/*.js',
-                        dest: '<%= distPath.js %>/',
+                        cwd: "js/",
+                        src: "**/*.js",
+                        dest: "<%= distPath.js %>/",
                         ext: ".min.js"
                     }
                 ]
@@ -114,9 +114,9 @@ module.exports = function (grunt) {
             extra: {
                 files: [
                     {
-                        src: ['<%= files_build.js %>'],
-                        dest: '<%= distPath.js %>/',
-                        cwd: '.',
+                        src: ["<%= files_build.js %>"],
+                        dest: "<%= distPath.js %>/",
+                        cwd: ".",
                         expand: true,
                         flatten: true
                     }
@@ -126,11 +126,11 @@ module.exports = function (grunt) {
 
         concat: {
             options: {
-                separator: '\n',
+                separator: "\n",
                 sourceMap: true
             },
             vendor: {
-                src: "<%= files_vendor.js %>",
+                src: ["<%= files_vendor.js %>", "<%= files_vendor.js_ui_bootstrap %>"],
                 dest: "<%= distPath.js %>/vendor.js"
             }
         },
@@ -138,15 +138,15 @@ module.exports = function (grunt) {
         cssmin: {
             minify: {
                 expand: true,
-                cwd: '<%= distPath.css %>',
-                src: ['*.css', '!*.min.css'],
-                dest: '<%= distPath.css %>',
-                ext: '.min.css'
+                cwd: "<%= distPath.css %>",
+                src: ["*.css", "!*.min.css"],
+                dest: "<%= distPath.css %>",
+                ext: ".min.css"
             }
         },
         clean: {
             options: {
-                'no-write': false,
+                "no-write": false,
                 force: true
             },
             js: {
@@ -162,7 +162,7 @@ module.exports = function (grunt) {
         watch: {
             options: {
                 livereload: {
-                    port: '<%= liveReload.port %>'
+                    port: "<%= liveReload.port %>"
                 }
             },
             ts: {
@@ -185,7 +185,7 @@ module.exports = function (grunt) {
                 tasks: ["sass:dist"]
             },
             css: {
-                files: ['<%= distPath.css %>/**/*.css'],
+                files: ["<%= distPath.css %>/**/*.css"],
                 tasks: []
             }
         },
@@ -193,13 +193,13 @@ module.exports = function (grunt) {
         php: {
             dev: {
                 options: {
-                    hostname: '<%= phpConf.hostname %>',
-                    port: '<%= phpConf.port %>',
-                    base: '<%= distPath.root %>',
-                    bin: '<%= phpConf.bin %>',
-                    keepalive: '<%= phpConf.keepAlive %>',
-                    router: '<%= phpConf.router %>',
-                    open: '<%= phpConf.openBrowser %>'
+                    hostname: "<%= phpConf.hostname %>",
+                    port: "<%= phpConf.port %>",
+                    base: "<%= distPath.root %>",
+                    bin: "<%= phpConf.bin %>",
+                    keepalive: "<%= phpConf.keepAlive %>",
+                    router: "<%= phpConf.router %>",
+                    open: "<%= phpConf.openBrowser %>"
                 }
             }
         }
