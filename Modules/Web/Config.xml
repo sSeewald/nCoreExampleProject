@@ -10,32 +10,21 @@
     <Translate>
     </Translate>
     <Router>
+        <Config>
+            <options>
+                <i18n>
+                    <locale>de</locale>
+                    <locale>en</locale>
+                </i18n>
+            </options>
+            <hosts>
+                <!--<host>localhost:5002</host>-->
+            </hosts>
+        </Config>
         <Routes>
-            <Route name="Front" path="/" controller="FrontController:index">
-                <options>
-                    <_query>true</_query>
-                    <_i18n und="true"/>
-                    <!--<_scheme>https</_scheme>-->
-                </options>
-                <schemes>
-                    <scheme>https</scheme>
-                    <scheme>http</scheme>
-                </schemes>
-                <methods>
-                    <method>GET</method>
-                </methods>
-                <!--<host></host>-->
-            </Route>
+            <Route name="Front" path="/" controller="FrontController:index"/>
         </Routes>
     </Router>
-    <Controller>
-        <Front name="FrontController">
-            <Action name="index">
-                <View>
-                </View>
-            </Action>
-        </Front>
-    </Controller>
     <Event>
         <Listener event="controller.init" callback="onControllerInit"/>
     </Event>
@@ -49,6 +38,17 @@
                     <value>js://app.js</value>
                 </resource>
             </JS>
+            <LINK>
+                <resource>
+                    <value>img://favicon.ico</value>
+                    <properties>
+                        <attributes>
+                            <type>image/x-icon</type>
+                            <rel>shortcut icon</rel>
+                        </attributes>
+                    </properties>
+                </resource>
+            </LINK>
             <CSS>
                 <resource>
                     <value>css://default.css</value>
@@ -90,5 +90,4 @@
             </META>
         </Resources>
     </View>
-
 </Config>

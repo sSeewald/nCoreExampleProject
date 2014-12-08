@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Config>
     <Module>
-        <Name>Web</Name>
+        <Name>Dev</Name>
         <Description>Dev Module enables livereload</Description>
         <Version>1.0</Version>
         <Weight>-1000</Weight>

@@ -45,11 +45,9 @@ class FrontController extends GenericController
      *      </Routes>
      * </Router>
      *
-     * @param string $param1
-     * @param string $param2
      * @return string
      */
-    public function indexAction($param1 = '', $param2 = '')
+    public function indexAction()
     {
         $this->View->addSegment('content', new ViewSegment('front', array(), __DIR__ . DIRECTORY_SEPARATOR . 'Views'));
         return $this->render();

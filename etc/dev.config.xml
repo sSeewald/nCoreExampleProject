@@ -10,11 +10,23 @@
             <Namespace>nm_de_</Namespace>
         </Cache>
     </App>
+    <Logger>
+        <Handler>
+            <!--<Mail>
+                <class>nCore\Core\Exception\Handler\Mail</class>
+                <properties>
+                    <recipient>email@address</recipient>
+                    <subject>ncore</subject>
+                </properties>
+                <levels>EMERGENCY, CRITICAL, WARNING, ALERT, NOTICE, INFO, DEBUG</levels>
+            </Mail>-->
+        </Handler>
+    </Logger>
     <I18n>
         <Locales>
-            <de-DE>de</de-DE>
-            <en-US>en</en-US>
-            <en-GB>en</en-GB>
+            <de-DE/>
+            <en-GB/>
+            <en-US/>
         </Locales>
         <Default>de_DE</Default>
         <Charset>UTF-8</Charset>
@@ -28,28 +40,6 @@
             <handler>ResourceHandlerUrl</handler>
             <properties>
                 <path>/</path>
-            </properties>
-        </Resource>
-        <Resource>
-            <scheme>ssl://</scheme>
-            <handler>ResourceHandlerUrl</handler>
-            <properties>
-                <path>/</path>
-                <forceSSL>true</forceSSL>
-            </properties>
-        </Resource>
-        <Resource>
-            <scheme>js-lib://</scheme>
-            <handler>ResourceHandlerUrl</handler>
-            <properties>
-                <path>/js/lib</path>
-            </properties>
-        </Resource>
-        <Resource>
-            <scheme>js-app://</scheme>
-            <handler>ResourceHandlerUrl</handler>
-            <properties>
-                <path>/js/app</path>
             </properties>
         </Resource>
         <Resource>
@@ -86,7 +76,7 @@
         <setDefaultPage>false</setDefaultPage>
         <defaultRoute>false</defaultRoute>
         <forceTrailingSlash>true</forceTrailingSlash>
-        <forceLocalePrefix>false</forceLocalePrefix>
+        <forceLocalePrefix>true</forceLocalePrefix>
         <autodetectLocale>true</autodetectLocale>
         <forceLowercase>true</forceLowercase>
         <Routes/>
@@ -98,7 +88,7 @@
             <Region>content</Region>
             <Region>footer</Region>
         </Regions>
-        <Renderer>nCore\Core\View\Renderer\TwigRenderer</Renderer>
+        <Renderer>nCore\Core\View\Renderer\Twig</Renderer>
         <Cache>true</Cache>
         <CacheDir>renderer</CacheDir>
         <ViewResources>
@@ -133,10 +123,6 @@
             </Resource>
         </ViewResources>
     </View>
-    <Meta>
-        <TitlePrefix/>
-        <TitlePostfix/>
-    </Meta>
 </Config>
 
 

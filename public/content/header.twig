@@ -1,1 +1,1 @@
-<!doctype html>{% spaceless %}<html><head>    {{ resource('META') }}    {{ resource('CSS') }}    {{ resource('JS') }}    {{ resource('LINK') }}</head><body>{% endspaceless %}
+<!doctype html>{% spaceless %}<html lang="{{ _.localeSafe }}"><html><head>    {{ resource('META') }}    {{ resource('CSS') }}    {{ resource('JS') }}    {{ resource('LINK') }}</head><body{{ attributes('body') }}>{% endspaceless %}

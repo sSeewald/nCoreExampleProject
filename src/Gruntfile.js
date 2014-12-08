@@ -130,7 +130,7 @@ module.exports = function (grunt) {
                 sourceMap: true
             },
             vendor: {
-                src: ["<%= files_vendor.js %>", "<%= files_vendor.js_ui_bootstrap %>"],
+                src: "<%= files_vendor.js %>",
                 dest: "<%= distPath.js %>/vendor.js"
             }
         },
