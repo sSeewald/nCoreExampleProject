@@ -13,10 +13,10 @@ return array(
     /*
      * Environment
      *
-     * [n]core try's to load a config with the defined prefix.
+     * [n]core will try to load a config with the defined prefix.
      *
-     * Combined and mergeable environment settings are not available.
-     * You have to define the complete config for the target environment.
+     * A default config.xml is always required.
+     * Prefixed versions [Environment].config.xml are merged into the main config file.
      *
      *
      * Example:
@@ -99,9 +99,6 @@ return array(
      *
      */
     'cache' => array(
-        // This enables or disables the class cache only.
-        'enabled' => false,
-        /*'provider' => 'Redis',
-        'config' => array('host' => '127.0.0.1', 'port' => 6379)*/
+        'enabled' => false, // This enables or disables the class cache only.
     ),
 );

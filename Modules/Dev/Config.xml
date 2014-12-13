@@ -5,7 +5,7 @@
         <Description>Dev Module enables livereload</Description>
         <Version>1.0</Version>
         <Weight>-1000</Weight>
-        <Enabled>true</Enabled>
+        <Enabled>false</Enabled>
     </Module>
     <View>
         <Resources>

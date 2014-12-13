@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Config>
-    <App>
-        <Modules>
-            <dir>/Modules</dir>
-        </Modules>
-        <Cache>
-            <Driver>nCore\Core\Cache\APC</Driver>
-            <Enabled>true</Enabled>
-            <Namespace>nm_de_</Namespace>
-        </Cache>
-    </App>
     <Logger>
         <Handler>
             <!--<Mail>
@@ -22,107 +12,6 @@
             </Mail>-->
         </Handler>
     </Logger>
-    <I18n>
-        <Locales>
-            <de-DE/>
-            <en-GB/>
-            <en-US/>
-        </Locales>
-        <Default>de_DE</Default>
-        <Charset>UTF-8</Charset>
-        <ShortLocales>true</ShortLocales>
-        <SingleLang>false</SingleLang>
-        <Query>lang</Query>
-    </I18n>
-    <Resources>
-        <Resource>
-            <scheme>public://</scheme>
-            <handler>ResourceHandlerUrl</handler>
-            <properties>
-                <path>/</path>
-            </properties>
-        </Resource>
-        <Resource>
-            <scheme>js://</scheme>
-            <handler>ResourceHandlerUrl</handler>
-            <properties>
-                <path>/js</path>
-            </properties>
-        </Resource>
-        <Resource>
-            <scheme>img://</scheme>
-            <handler>ResourceHandlerUrl</handler>
-            <properties>
-                <path>/img</path>
-            </properties>
-        </Resource>
-        <Resource>
-            <scheme>css://</scheme>
-            <handler>ResourceHandlerUrl</handler>
-            <properties>
-                <path>/css</path>
-            </properties>
-        </Resource>
-        <Resource>
-            <scheme>font://</scheme>
-            <handler>ResourceHandlerUrl</handler>
-            <properties>
-                <path>/font</path>
-            </properties>
-        </Resource>
-    </Resources>
-    <Router>
-        <query>req</query>
-        <setDefaultPage>false</setDefaultPage>
-        <defaultRoute>false</defaultRoute>
-        <forceTrailingSlash>true</forceTrailingSlash>
-        <forceLocalePrefix>true</forceLocalePrefix>
-        <autodetectLocale>true</autodetectLocale>
-        <forceLowercase>true</forceLowercase>
-        <Routes/>
-    </Router>
-    <View>
-        <Path>content</Path>
-        <Regions>
-            <Region>header</Region>
-            <Region>content</Region>
-            <Region>footer</Region>
-        </Regions>
-        <Renderer>nCore\Core\View\Renderer\Twig</Renderer>
-        <Cache>true</Cache>
-        <CacheDir>renderer</CacheDir>
-        <ViewResources>
-            <Resource>
-                <name>ATTR</name>
-                <class>nCore\Core\View\Resource\ViewResourceAttributes</class>
-            </Resource>
-            <Resource>
-                <name>META</name>
-                <class>nCore\Core\View\Resource\ViewResourceMeta</class>
-            </Resource>
-            <Resource>
-                <name>CSS</name>
-                <class>nCore\Core\View\Resource\ViewResourceStyle</class>
-                <inject>
-                    <service prop="resourceLocator" name="App.Resource.Locator"/>
-                </inject>
-            </Resource>
-            <Resource>
-                <name>LINK</name>
-                <class>nCore\Core\View\Resource\ViewResourceLink</class>
-                <inject>
-                    <service prop="resourceLocator" name="App.Resource.Locator"/>
-                </inject>
-            </Resource>
-            <Resource>
-                <name>JS</name>
-                <class>nCore\Core\View\Resource\ViewResourceScript</class>
-                <inject>
-                    <service prop="resourceLocator" name="App.Resource.Locator"/>
-                </inject>
-            </Resource>
-        </ViewResources>
-    </View>
 </Config>
 
 
